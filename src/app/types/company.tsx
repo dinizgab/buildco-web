@@ -1,8 +1,10 @@
 type Company = {
     id: string,
     name: string,
+    email: string,
     phone: string,
-    email: string
+    ratings: Ratings[],
+    createdAt: string
 }
 
 export default Company
