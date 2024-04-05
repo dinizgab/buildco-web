@@ -1,5 +1,5 @@
 'use client'
-import { At, InstagramLogo, MapPin, Phone, Star, WhatsappLogo } from "@phosphor-icons/react"
+import { At, InstagramLogo, Phone, WhatsappLogo } from "@phosphor-icons/react"
 
 type Props = {
     name: string,
@@ -10,7 +10,7 @@ type Props = {
 
 export default function CompanyProfile({ name, phone, email }: Props) {
     return (
-        <section className="h-3/5 w-1/2 flex flex-col m-auto rounded-3xl">
+        <section className="h-3/5 w-1/2 flex flex-col mt-12 mx-auto rounded-3xl">
             <img src="/banner-image.jpg" className="h-2/5 rounded-t-3xl"/>
 
             <div className="w-full px-6 pb-8 rounded-b-3xl grid grid-cols-3 bg-sky-50 shadow-lg">
