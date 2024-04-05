@@ -16,11 +16,10 @@ export default async function CompanyPage({ params }: Props) {
         <div className="flex h-screen flex-col items-center gap-5">
             <CompanyProfile name={data.name} phone={data.phone} email={data.email} />
             {
-                data.ratings.length > 0
-                    ? data.ratings.map(r => <CommentCard userName={"Gabriel Diniz"} comment={r.comment} grade={r.grade} commentDate={new Date()} />)
-                    : <div>Nada para ver aqui ainda! :(</div>
+                data.ratings ?
+                    data.ratings.map(r => <CommentCard key={r.id} userName={"Gabriel Diniz"} comment={r.comment} grade={r.grade} commentDate={new Date(r.commentDate)} />) :
+                    <div className="font-medium text-2xl">Nenhum comentário para se ver aqui ainda! :(</div>
             }
-            <CommentCard userName="Gabriel Diniz" comment={"Testando os comentarios"} commentDate={new Date()} grade={3} />
         </div>
     )
 }

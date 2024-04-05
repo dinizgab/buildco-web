@@ -10,10 +10,10 @@ type Props = {
 
 export default function CompanyProfile({ name, phone, email }: Props) {
     const contactInfo = [
-        { contact: phone, icon: Phone },
-        { contact: email, icon: At },
-        { contact: "4123-4123", icon: WhatsappLogo },
-        { contact: "@testco", icon: InstagramLogo }
+        { key: 0, contact: phone, icon: Phone },
+        { key: 1, contact: email, icon: At },
+        { key: 2, contact: "4123-4123", icon: WhatsappLogo },
+        { key: 3, contact: "@testco", icon: InstagramLogo }
     ]
 
     return (
@@ -50,7 +50,7 @@ export default function CompanyProfile({ name, phone, email }: Props) {
 
                 <div className="flex flex-row flex-wrap justify-center gap-3 mt-6 relative">
                     {
-                        contactInfo.map(contact => <HoverCardContact contactInfo={contact.contact} Icon={contact.icon} />)
+                        contactInfo.map(contact => <HoverCardContact key={contact.key} contactInfo={contact.contact} Icon={contact.icon} />)
                     }
                 </div>
             </div>
