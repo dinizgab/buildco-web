@@ -1,5 +1,5 @@
 'use client'
-import { formatDate } from "@/utils/format"
+import { formatDate } from "@/utils/format_date"
 import { Star, ThumbsDown, ThumbsUp } from "@phosphor-icons/react"
 
 type Props = {
