@@ -14,18 +14,6 @@ export default async function CompanyPage({ params }: Props) {
     return (
         <div className="flex h-screen flex-col items-center">
             <CompanyProfile name={data.name} phone={data.phone} email={data.email} />
-
-            <main className="w-1/2 bg-slate-300 rounded-xl">
-                Company name: {data.name}
-                {
-                    data.ratings.map((rating: any) => (
-                        <div>
-                            {rating.grade}
-                            {rating.comment}
-                        </div>
-                    ))
-                }
-            </main>
         </div>
     )
 }
