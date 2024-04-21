@@ -13,10 +13,10 @@ export default async function CompanyPage({ params }: Props) {
     const data = await response.json() as Company
 
     return (
-        <div className="flex h-screen flex-col items-center gap-5">
+        <div className="h-screen min-h-fit flex flex-col items-center gap-5 pb-12">
             <CompanyProfile name={data.name} phone={data.phone} email={data.email} />
             {
-                data.ratings ?
+                data.ratings.length > 0 ?
                     data.ratings.map(r => <CommentCard key={r.id} userName={"Gabriel Diniz"} comment={r.comment} grade={r.grade} commentDate={new Date(r.commentDate)} />) :
                     <div className="font-medium text-2xl">Nenhum comentário para se ver aqui ainda! :(</div>
             }

@@ -10,14 +10,14 @@ type Props = {
 
 export default function CompanyProfile({ name, phone, email }: Props) {
     const contactInfo = [
-        { key: 0, contact: phone, icon: Phone },
-        { key: 1, contact: email, icon: At },
-        { key: 2, contact: "4123-4123", icon: WhatsappLogo },
-        { key: 3, contact: "@testco", icon: InstagramLogo }
+        { contact: phone, icon: Phone },
+        { contact: email, icon: At },
+        { contact: "4123-4123", icon: WhatsappLogo },
+        { contact: "@testco", icon: InstagramLogo }
     ]
 
     return (
-        <section className="h-3/5 w-1/2 flex flex-col mt-12 mx-auto rounded-3xl">
+        <section className="h-3/5 w-1/2 flex flex-col mx-auto my-12 rounded-3xl">
             <img src="/banner-image.jpg" className="h-2/5 rounded-t-3xl" />
 
             <div className="w-full px-6 pb-8 rounded-b-3xl grid grid-cols-3 bg-sky-50 shadow-lg">
@@ -50,7 +50,7 @@ export default function CompanyProfile({ name, phone, email }: Props) {
 
                 <div className="flex flex-row flex-wrap justify-center gap-3 mt-6 relative">
                     {
-                        contactInfo.map(contact => <HoverCardContact key={contact.key} contactInfo={contact.contact} Icon={contact.icon} />)
+                        contactInfo.map((contact, index) => <HoverCardContact key={index} contactInfo={contact.contact} Icon={contact.icon} />)
                     }
                 </div>
             </div>
